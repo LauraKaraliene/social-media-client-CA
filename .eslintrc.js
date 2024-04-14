@@ -8,7 +8,7 @@ module.exports = {
   },
   extends: ['eslint:recommended', 'plugin:jest/recommended'],
   parserOptions: {
-    ecmaVersion: 'latest', // or 2021 if you want to be specific
+    ecmaVersion: 'latest',
     sourceType: 'module',
   },
   rules: {},
@@ -18,6 +18,16 @@ module.exports = {
       env: { jest: true },
       plugins: ['jest'],
       rules: { 'jest/prefer-expect-assertions': 'off' },
+    },
+    {
+      files: ['**/*.cy.js'],
+      env: { 'cypress/globals': true },
+      plugins: ['cypress'],
+      extends: ['plugin:cypress/recommended'],
+      rules: {
+        'cypress/no-unnecessary-waiting': 'off',
+        'no-unused-vars': 'off',
+      },
     },
   ],
 }
