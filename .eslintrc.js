@@ -1,4 +1,3 @@
-// .eslintrc.js
 module.exports = {
   env: {
     browser: true,
@@ -20,12 +19,14 @@ module.exports = {
       rules: { 'jest/prefer-expect-assertions': 'off' },
     },
     {
-      files: ['**/*.cy.js'],
+      files: ['**/*.cy.js', 'cypress.config.js'],
       env: { 'cypress/globals': true },
       plugins: ['cypress'],
       extends: ['plugin:cypress/recommended'],
       rules: {
         'cypress/no-unnecessary-waiting': 'off',
+        'jest/valid-expect': 'off',
+        'jest/expect-expect': 'off',
         'no-unused-vars': 'off',
       },
     },
