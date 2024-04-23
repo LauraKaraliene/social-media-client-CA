@@ -1,10 +1,9 @@
 import { login } from './login.js'
-import * as storage from '../../storage/index.js'
 import MockLocalStorage from '../../mocks/MockLocalStorage.js'
 
 const ACCESS_TOKEN = '12345'
 
-// create a mock fetch function that will pretend to be ther native fetch function
+// Create a mock fetch function that simulates a successful network call returning an access token
 const mockFetchSuccess = jest.fn().mockResolvedValue({
   ok: true,
   json: jest.fn().mockResolvedValue({ accessToken: ACCESS_TOKEN }),
@@ -12,11 +11,20 @@ const mockFetchSuccess = jest.fn().mockResolvedValue({
 
 describe('the login function', () => {
   it('stores a token when provided with valid credentials', async () => {
-    // assign this to the global fetch function
+    // Assign the mock fetch function to the global fetch function
     global.fetch = mockFetchSuccess
-    // assign the mock tot he global localStorage object
-    global.localStorage = new MockLocalStorage()
+
+    // Create an instance of MockLocalStorage and assign it to the global localStorage
+    const mockStorage = new MockLocalStorage()
+    global.localStorage = mockStorage
+
+    // Call the login function
     await login('email', 'password')
-    expect(storage.load('token')).toEqual(ACCESS_TOKEN)
+
+    // Retrieve and parse the token from localStorage
+    const storedToken = JSON.parse(global.localStorage.getItem('token'))
+
+    // Check that the token is stored correctly
+    expect(storedToken).toEqual(ACCESS_TOKEN)
   })
 })
