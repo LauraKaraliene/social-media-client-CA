@@ -1,6 +1,6 @@
 # Workflow CA
 
-![GitHub Pages](https://github.com/LauraKaraliene/https://github.com/LauraKaraliene/social-media-client-CA/tree/workflow/actions/workflows/pages.yml/badge.svg)
+![GitHub Pages](https://github.com/LauraKaraliene/social-media-client-CA/tree/workflow/actions/workflows/pages.yml/badge.svg)
 
 This project aims to improve the quality of an existing social media application by integrating development workflows and a comprehensive testing strategy.
 My key tasks involved creating unit tests for the login and logout functionalities and conducting end-to-end tests on the login process to ensure it correctly handles valid credentials and provides clear error messages when necessary.
