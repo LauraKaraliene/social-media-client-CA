@@ -8,15 +8,11 @@ describe('Login functionality - Negative Tests', () => {
     cy.get('input#loginEmail').type(Cypress.env('invalidEmail'))
     cy.get('input#loginPassword').type(Cypress.env('invalidPassword'))
     cy.get('#loginForm').submit()
-
-    // Prepare to catch the alert
     cy.on('window:alert', (text) => {
       expect(text).to.contains(
         'Either your username was not found or your password is incorrect',
       )
     })
-
-    // ensure the alert was actually called by adding a fail-safe check
     cy.get('input#loginEmail').should('exist')
   })
 })
