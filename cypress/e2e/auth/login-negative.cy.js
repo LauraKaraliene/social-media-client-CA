@@ -1,15 +1,15 @@
 describe('Login functionality - Negative Tests', () => {
   it('Cannot submit the login form with invalid credentials and is shown a message', () => {
     cy.visit('/')
-    cy.wait(1000)
+    cy.wait(500)
     cy.get('#registerModal [data-auth="login"]').click()
-    cy.wait(1000)
-
+    cy.wait(500)
     cy.get('input#loginEmail').type(Cypress.env('invalidEmail'))
     cy.get('input#loginPassword').type(Cypress.env('invalidPassword'))
-    cy.get('#loginForm').submit()
+    cy.get('button[type=submit]').contains('Login').click()
+    cy.wait(500)
     cy.on('window:alert', (text) => {
-      expect(text).to.contains(
+      expect(text).to.equal(
         'Either your username was not found or your password is incorrect',
       )
     })
