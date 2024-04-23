@@ -1,9 +1,9 @@
 # Workflow CA
 
-This project aims to improve the quality of an existing social media application by integrating development workflows and a comprehensive testing strategy. 
+![GitHub Pages](https://github.com/LauraKaraliene/https://github.com/LauraKaraliene/social-media-client-CA/tree/workflow/actions/workflows/pages.yml/badge.svg)
+
+This project aims to improve the quality of an existing social media application by integrating development workflows and a comprehensive testing strategy.
 My key tasks involved creating unit tests for the login and logout functionalities and conducting end-to-end tests on the login process to ensure it correctly handles valid credentials and provides clear error messages when necessary.
-
-
 
 ## Packages Used
 
@@ -17,12 +17,10 @@ Before using the packages below, ensure you have **Node.js** installed on your m
 - **Babel**: Transpiles ES6+ JavaScript to backwards compatible versions.
 - **Sass**: Enhances CSS with more powerful stylesheets.
 
-
 ## Configuration
 
 - **Commit Hooks**: Husky is used to manage Git hooks. We've configured Husky to run `eslint` and `prettier` on staged files before every commit, ensuring that all committed code adheres to our style guidelines and is free from basic errors.
 - **GitHub Actions**: Set up to automate build and deployment tasks, running our test suites on every push and pull request to ensure that changes do not break the existing functionality.
-
 
 ## Scripts
 
@@ -38,11 +36,10 @@ Here are some useful npm commands you can run:
 - `npm run format` - Formats JavaScript files in the `src` directory using Prettier.
 - `npm run prepare` - Installs Husky to manage Git hooks, enhancing workflows with automated actions.
 
-
 ## Getting Started
 
 1. Clone the repository:
-   
+
 ```
 git clone https://github.com/LauraKaraliene/social-media-client-CA
 ```
@@ -67,7 +64,7 @@ npm install -g sass
 
 ```
 npm install
-``` 
+```
 
 5. Build the project.
    Before starting the server, compile the initial CSS from Sass. This converts your Sass files into CSS files in the `dist/css` directory:
@@ -88,7 +85,8 @@ npm start
 npm test-unit
 ```
 
-8. Run End-to-End Tests. This command will open the Cypress Test Runner, where you can watch the tests run in a real browser. 
+8. Run End-to-End Tests. This command will open the Cypress Test Runner, where you can watch the tests run in a real browser.
+
 ```
 npm run test-e2e
 
@@ -101,10 +99,4 @@ If you encounter issues during installation or running scripts, here are a few c
 - **npm install errors**: Make sure your Node.js and npm are up to date. Try cleaning your npm cache with `npm cache clean --force` and reinstall the dependencies.
 - **Sass compilation fails**: Ensure Sass is correctly installed globally, or run `npm install sass` locally within the project.
 - **Cypress not opening**: Check that Cypress is installed globally or run `npm install cypress` if you prefer a local installation. Also, ensure your system meets the Cypress requirements.
-- **ESLint Errors: If ESLint throws errors for files that don’t seem to require changes, check the .eslintrc.js configuration for rules that might be incorrectly set up or too strict.
-
-
-
-
-
-
+- \*\*ESLint Errors: If ESLint throws errors for files that don’t seem to require changes, check the .eslintrc.js configuration for rules that might be incorrectly set up or too strict.
