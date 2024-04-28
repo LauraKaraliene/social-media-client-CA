@@ -10,7 +10,7 @@ describe('Login functionality - Negative Tests', () => {
     cy.wait(500)
     cy.on('window:alert', (text) => {
       expect(text).to.equal(
-        'Either your username was not found or your password is incorrect',
+        'Please match the requested format. Only Noroff student or teacher emails are valid',
       )
     })
     cy.get('input#loginEmail').should('exist')
